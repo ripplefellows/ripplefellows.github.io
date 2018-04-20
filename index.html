@@ -2,13 +2,19 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="0; url=https://dallin2preece.wixsite.com/maestrometronome">
-        <script type="text/javascript">
-            window.location.href = "https://dallin2preece.wixsite.com/maestrometronome"
-        </script>
-        <title>Page Redirection</title>
+        <title>Maestro Dashboard</title>
+	<script type='text/javascript' src='https://kitchwww.github.io/midi/midi.js'></script>
     </head>
     <body>
-        If you are not redirected automatically, follow this <a href='https://dallin2preece.wixsite.com/maestrometronome'>link</a>.
+	    <p>MIDI recording:</p>
+	    <a href="#" onClick="MIDIjs.play('scale.mid');">Play MIDI</a>
+	    <a href="#" onClick="MIDIjs.stop();">Stop MIDI</a>
+	    <br>
+	    <a href="scale.mid">Download MIDI</a>
+	    <br><br>
+	    <p>Audio recording (wav)::</p>
+	    <audio controls src="chop.wav"></audio>
+	    <br>
+	    <a href="chop.wav">Download audio</a>
     </body>
 </html>

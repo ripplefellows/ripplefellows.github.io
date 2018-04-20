@@ -26,13 +26,13 @@ $(document)
         player.on('play', app.start)
         player.on('progress', app.setProgress)
         player.on 'trackchange', (trackId) ->
-         # loader.message 'Loading MIDI', ->
-          #  app.loadBuiltinMidi trackId, ->
-           #   loader.stop ->
-            #    player.play()
+          loader.message 'Loading MIDI', ->
+            app.loadBuiltinMidi trackId, ->
+              loader.stop ->
+                player.play()
         player.on 'filedrop', (midiFile) ->
           player.stop()
-         # loader.message 'Loading MIDI', ->
+          loader.message 'Loading MIDI', ->
             app.loadMidiFile midiFile, ->
               loader.stop ->
                 player.play()
@@ -67,7 +67,7 @@ $(document)
           reader.onload = (e) ->
             midiFile = e.target.result
             player.stop()
-            #loader.message 'Loading MIDI', ->
+            loader.message 'Loading MIDI', ->
               app.loadMidiFile midiFile, ->
                 loader.stop ->
                   player.play()

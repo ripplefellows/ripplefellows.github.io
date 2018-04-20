@@ -22,15 +22,6 @@
         player.on('stop', app.stop);
         player.on('play', app.start);
         player.on('progress', app.setProgress);
-        player.on('trackchange', function(trackId) {
-          return loader.message('Loading MIDI', function() {
-            return app.loadBuiltinMidi(trackId, function() {
-              return loader.stop(function() {
-                return player.play();
-              });
-            });
-          });
-        });
         player.on('filedrop', function(midiFile) {
           player.stop();
           return loader.message('Loading MIDI', function() {
